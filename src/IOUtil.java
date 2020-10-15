@@ -112,15 +112,4 @@ public class IOUtil {
         return input;
     }
 
-    public static String printMemberToString(Person member, LocalDate dateNow) {
-        String memberInfo = "";
-
-        memberInfo += "---Medlemsinfo---\n";
-        memberInfo += member.toString();
-        memberInfo += "\n";
-        memberInfo += "Aktivt medlemskap: ";
-        memberInfo += GymLogic.isMembershipActive(member, dateNow) ? "ja\n" : "nej\n";
-
-        return memberInfo;
-    }
 }

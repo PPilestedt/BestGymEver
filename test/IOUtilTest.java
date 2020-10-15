@@ -99,20 +99,4 @@ public class IOUtilTest {
 
     }
 
-    @Test
-    public void memberToStringTest(){
-
-        LocalDate fakeDate = LocalDate.parse("2020-03-23");
-        Person person = new Person("7512166544","Greger Ganache", fakeDate);
-
-        String memberInfo = IOUtil.printMemberToString(person,fakeDate);
-
-        String info = "---Medlemsinfo---\n";
-        info += "Namn: Greger Ganache \nPersonnummer: 7512166544 \nBetalade årsavgift: 2020-03-23";
-        info += "\n";
-        info += "Aktivt medlemskap: ja\n";
-
-        assertEquals(memberInfo,info);
-
-    }
 }

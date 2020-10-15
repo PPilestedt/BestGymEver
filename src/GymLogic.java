@@ -16,4 +16,16 @@ public class GymLogic {
         return subscriptionDate.isAfter(currentDate.minusYears(1)) ||
                 subscriptionDate.isEqual(currentDate.minusYears(1));
     }
+
+    public static String printMemberToString(Person member, LocalDate dateNow) {
+        String memberInfo = "";
+
+        memberInfo += "---Medlemsinfo---\n";
+        memberInfo += member.toString();
+        memberInfo += "\n";
+        memberInfo += "Aktivt medlemskap: ";
+        memberInfo += isMembershipActive(member, dateNow) ? "ja\n" : "nej\n";
+
+        return memberInfo;
+    }
 }
