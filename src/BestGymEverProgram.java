@@ -24,10 +24,11 @@ public class BestGymEverProgram {
                 break;
 
             Person member = GymLogic.findMember(input, membershipList);
-            if(member != null && GymLogic.isMembershipActive(member, LocalDate.now())) {
-
-                IOUtil.exportPerson(member,LocalDate.now(),OUTPUTFILE);
+            if(member != null) {
                 System.out.println(IOUtil.printMemberToString(member,LocalDate.now()));
+
+                if(GymLogic.isMembershipActive(member, LocalDate.now()))
+                    IOUtil.exportPerson(member,LocalDate.now(),OUTPUTFILE);
 
             }else
                 System.out.println("Personen saknas i registret och är obehörig!\n");
