@@ -63,7 +63,7 @@ public class IOUtilTest {
     }
 
     @Test
-    public void exportIfActiveTest(){
+    public void exportPersonTest(){
 
         try {
             Files.deleteIfExists(outputSrcTest);
@@ -72,7 +72,7 @@ public class IOUtilTest {
         }
 
         Person person = new Person("1234567891","Janne Josefsson",LocalDate.parse("2020-03-23"));
-        IOUtil.exportIfActive(person,LocalDate.parse("2020-05-05"),outputSrcTest);
+        IOUtil.exportPerson(person,LocalDate.parse("2020-05-05"),outputSrcTest);
 
         int count = 0;
         try (Scanner scan = new Scanner(outputSrcTest)){

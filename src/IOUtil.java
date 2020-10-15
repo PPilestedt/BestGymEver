@@ -66,11 +66,7 @@ public class IOUtil {
         return LocalDate.parse(line);
     }
 
-    public static void exportIfActive(Person person, LocalDate dateNow, Path outputSrc) {
-
-        if(!GymLogic.isMembershipActive(person,dateNow))
-            return;
-
+    public static void exportPerson(Person person, LocalDate dateNow, Path outputSrc) {
         if(!Files.exists(outputSrc)) {
             try {
                 Files.createFile(outputSrc);
