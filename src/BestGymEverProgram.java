@@ -25,7 +25,7 @@ public class BestGymEverProgram {
 
             Person member = GymLogic.findMember(input, membershipList);
             if(member != null) {
-                System.out.println(IOUtil.printMemberToString(member,LocalDate.now()));
+                System.out.println(GymLogic.printMemberToString(member,LocalDate.now()));
 
                 if(GymLogic.isMembershipActive(member, LocalDate.now()))
                     IOUtil.exportPerson(member,LocalDate.now(),OUTPUTFILE);
